@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:weather_app/config/routes/app_routes.dart';
+
+import 'features/start_page/presentation/start_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,15 +14,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      onGenerateRoute: AppRoutes.onGenerateRoutes,
       title: 'Weather App',
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Material App Bar'),
-        ),
-        body: const Center(
-          child: Text('Hello World'),
-        ),
-      ),
+      home: StartPage()
     );
   }
 }

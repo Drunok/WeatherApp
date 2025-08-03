@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:weather_app/config/routes/app_routes.dart';
+import 'package:weather_app/core/utilities.dart';
 
 class CitySelection extends StatelessWidget {
   CitySelection({super.key});
@@ -19,26 +21,34 @@ class CitySelection extends StatelessWidget {
   Future<void> _showConfirmationDialog(BuildContext context, String departmentName) async {
     return showDialog<void>(
       context: context,
-      barrierDismissible: false, // Hace que el usuario no pueda cerrar el diálogo tocando fuera
+      barrierDismissible: true, // El usuario no puede cerrar el diálogo tocando fuera
       builder: (BuildContext context) {
         return AlertDialog(
           title: Text('Confirm Selection'),
-          content: Text('Are you sure you want to select $departmentName?'),
+          content: Text(
+            '¿Estás seguro de que quieres seleccionar $departmentName?',
+          ),
           actions: <Widget>[
             TextButton(
-              child: Text('Cancel'),
+              child: Text('Cancelar', style: TextStyle(color: Colors.black),),
               onPressed: () {
                 Navigator.of(context).pop(); // Cierra el diálogo
               },
             ),
-            TextButton(
-              child: Text('Yes'),
+            FilledButton(
               onPressed: () {
-                Navigator.of(context).pop(); // Cierra el diálogo
-                // Aquí puedes manejar la acción que se realiza al confirmar la selección
-                print('Selected: $departmentName');
-                // También podrías navegar a otra pantalla o realizar otra acción
+                Utilities utilities = Utilities();
+                utilities.saveCityName(departmentName); // Guardar el nombre de la ciudad
+                Navigator.popAndPushNamed(
+                context, 
+                AppRoutes.cityWeather,// Pasamos el nombre de la ciudad como parámetro
+              );
               },
+              style: FilledButton.styleFrom(
+                backgroundColor: Colors.black,
+                foregroundColor: Colors.white,
+              ),
+              child: Text('Aceptar'),
             ),
           ],
         );

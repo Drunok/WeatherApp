@@ -1,16 +1,12 @@
-# weather_app
 
-A new Flutter project.
+### Explicación:
 
-## Getting Started
+1. **`flutter build apk`**: Este es el comando principal para construir el archivo APK. Es la manera en la que se genera una versión lista para instalar en un dispositivo Android.
 
-This project is a starting point for a Flutter application.
+2. **Instrucciones para instalar el APK**: Una vez que se genera el APK, se pueden seguir las instrucciones para instalar el archivo en un dispositivo Android utilizando `adb` o cualquier otro método.
 
-A few resources to get you started if this is your first Flutter project:
+3. **Interacción con la app**:
+   - La app pedirá al usuario hacer clic en el botón **"Comenzar"**.
+   - Luego, el usuario podrá seleccionar una ciudad de una lista para ver el clima actual de esa ciudad.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Si necesitas más detalles o ajustes adicionales en el `README.md`, ¡avísame!

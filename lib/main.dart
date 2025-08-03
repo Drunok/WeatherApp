@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:weather_app/config/routes/app_routes.dart';
 
-import 'features/start_page/presentation/start_page.dart';
+import 'features/start_page/presentation/pages/start_page.dart';
 
 void main() {
   runApp(const MyApp());

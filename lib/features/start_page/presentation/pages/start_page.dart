@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weather_app/config/routes/app_routes.dart';
 
 class StartPage extends StatelessWidget {
   const StartPage({super.key});
@@ -14,13 +15,13 @@ class StartPage extends StatelessWidget {
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
-          child: buildBody(),
+          child: buildBody(context),
         ),
       ),
     );
   }
 
-  Widget buildBody() {
+  Widget buildBody(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
@@ -45,15 +46,8 @@ class StartPage extends StatelessWidget {
           height: 350,
           fit: BoxFit.cover,
         ),
-        // Icon(
-        //   Icons.cloud_queue,
-        //   size: 100,
-        //   color: Colors.white,
-        // ),
 
         SizedBox(height: 20),
-
-        // SizedBox(height: 10),
 
         // Descripcion
         Text(
@@ -70,7 +64,7 @@ class StartPage extends StatelessWidget {
         // Boton de empezar
         ElevatedButton(
           onPressed: () {
-            
+            Navigator.pushNamed(context, AppRoutes.citySelection);
           }, 
           style: ElevatedButton.styleFrom(
             backgroundColor: Colors.orange,
